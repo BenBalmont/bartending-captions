@@ -1,108 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ben Balmont — Freelance Developer | Python, Automation, Bots</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #f0f0f0; }
-  .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-  .hero h1 { font-size: 36px; margin-bottom: 12px; }
-  .hero h1 span { color: #4ade80; }
-  .hero p { font-size: 18px; color: #aaa; max-width: 600px; margin: 0 auto 30px; }
-  .badge { display: inline-block; background: #4ade80; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; margin-bottom: 20px; }
-  .services { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-  .services h2 { font-size: 28px; margin-bottom: 30px; text-align: center; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-  .card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 24px; }
-  .card:hover { border-color: #4ade80; }
-  .card .icon { font-size: 32px; margin-bottom: 12px; }
-  .card h3 { font-size: 18px; margin-bottom: 8px; }
-  .card p { color: #aaa; font-size: 14px; margin-bottom: 16px; line-height: 1.5; }
-  .price { font-size: 24px; font-weight: bold; color: #4ade80; }
-  .cta-section { text-align: center; padding: 60px 20px; background: #111; }
-  .cta-section h2 { font-size: 28px; margin-bottom: 12px; }
-  .cta-section p { color: #aaa; margin-bottom: 30px; }
-  .btn { display: inline-block; background: #4ade80; color: #000; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; margin: 8px; }
-  .btn-outline { background: transparent; color: #4ade80; border: 2px solid #4ade80; }
-  .how { max-width: 700px; margin: 0 auto; padding: 60px 20px; text-align: center; }
-  .how h2 { font-size: 28px; margin-bottom: 30px; }
-  .steps { display: flex; flex-direction: column; gap: 16px; text-align: left; }
-  .step { display: flex; gap: 16px; align-items: flex-start; background: #1a1a1a; padding: 20px; border-radius: 10px; }
-  .step .num { font-size: 24px; font-weight: bold; color: #4ade80; min-width: 32px; }
-  footer { text-align: center; padding: 30px; color: #555; font-size: 14px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ben Balmont — Python & JavaScript Developer | Fast Delivery</title>
+  <meta name="description" content="Python scripts, web scrapers, automation bots, Discord bots, API integrations. Fast delivery. PayPal accepted. $15-75/project.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+    }
+    header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+    header .subtitle {
+      font-size: 1.2em;
+      color: #8b949e;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: 600;
+      margin: 4px;
+    }
+    .badge.fast { background: #1f6feb; }
+    .badge.paypal { background: #003087; }
+    
+    .cta-btn {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #2ea043; }
+    
+    section {
+      padding: 50px 0;
+      border-bottom: 1px solid #21262d;
+    }
+    section h2 {
+      font-size: 1.8em;
+      color: #58a6ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+    .service-card .icon { font-size: 2.5em; margin-bottom: 12px; }
+    .service-card h3 { color: #e6edf3; margin-bottom: 8px; font-size: 1.1em; }
+    .service-card .price { color: #3fb950; font-weight: 700; font-size: 1.2em; margin-bottom: 8px; }
+    .service-card p { color: #8b949e; font-size: 0.9em; }
+    
+    .examples {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    .examples h3 { color: #e6edf3; margin-bottom: 15px; font-size: 1.1em; }
+    .examples ul { list-style: none; }
+    .examples ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #21262d;
+      color: #8b949e;
+      font-size: 0.95em;
+    }
+    .examples ul li:last-child { border-bottom: none; }
+    .examples ul li::before { content: "→ "; color: #58a6ff; }
+    
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .step {
+      padding: 20px;
+    }
+    .step .num {
+      width: 50px;
+      height: 50px;
+      background: #1f6feb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4em;
+      font-weight: 700;
+      margin: 0 auto 15px;
+    }
+    .step h3 { color: #e6edf3; margin-bottom: 8px; }
+    .step p { color: #8b949e; font-size: 0.9em; }
+    
+    .contact-section {
+      text-align: center;
+      padding: 50px 0;
+    }
+    .contact-section p { color: #8b949e; margin-bottom: 15px; font-size: 1.1em; }
+    .email-link {
+      display: inline-block;
+      background: #161b22;
+      border: 2px solid #58a6ff;
+      color: #58a6ff;
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 8px;
+      transition: all 0.2s;
+    }
+    .email-link:hover { background: #58a6ff; color: #0d1117; }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tech-tag {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #8b949e;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85em;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #8b949e;
+      font-size: 0.9em;
+      border-top: 1px solid #21262d;
+    }
+  </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="badge">⚡ Available Now — Fast Turnaround</div>
-  <h1>Freelance <span>Developer</span> for Hire</h1>
-  <p>Python scripts, web scrapers, automation bots, Discord bots, API integrations — built fast, delivered same day.</p>
-  <a href="mailto:ben@balmontcreatives.com" class="btn">📩 Email Me Your Project</a>
-</div>
-
-<div class="services">
-  <h2>What I Build</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🕷️</div>
-      <h3>Web Scrapers</h3>
-      <p>Scrape any website — prices, listings, contacts, data. Get it as CSV, JSON, or Google Sheets.</p>
-      <div class="price">From $15</div>
+<header>
+  <div class="container">
+    <h1>Ben Balmont</h1>
+    <div class="subtitle">Python & JavaScript Developer · Automation Specialist</div>
+    <div>
+      <span class="badge">⚡ Fast Delivery</span>
+      <span class="badge fast">💻 5+ Years</span>
+      <span class="badge paypal">💳 PayPal Accepted</span>
     </div>
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>Automation Scripts</h3>
-      <p>Automate repetitive tasks — form filling, data entry, browser automation, scheduled jobs.</p>
-      <div class="price">From $20</div>
-    </div>
-    <div class="card">
-      <div class="icon">🎮</div>
-      <h3>Discord / Telegram Bots</h3>
-      <p>Custom bots with commands, moderation, notifications, API data, or anything you need.</p>
-      <div class="price">From $25</div>
-    </div>
-    <div class="card">
-      <div class="icon">🔌</div>
-      <h3>API Integrations</h3>
-      <p>Connect any two services — Stripe, Notion, Airtable, OpenAI, Slack, webhooks, you name it.</p>
-      <div class="price">From $20</div>
-    </div>
-    <div class="card">
-      <div class="icon">🐍</div>
-      <h3>Python Scripts</h3>
-      <p>Data processing, file manipulation, email automation, report generation, anything Python.</p>
-      <div class="price">From $10</div>
-    </div>
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>Landing Pages</h3>
-      <p>Clean, fast HTML/CSS landing pages. Mobile-friendly, no frameworks, delivered as code.</p>
-      <div class="price">From $30</div>
-    </div>
+    <a href="mailto:ben@balmontcreatives.com" class="cta-btn">📩 Get a Free Quote</a>
   </div>
-</div>
+</header>
 
-<div class="how">
-  <h2>How It Works</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div><strong>Email your project</strong><br>Describe what you need — I'll reply within the hour with a quote and timeline.</div></div>
-    <div class="step"><div class="num">2</div><div><strong>Pay via PayPal</strong><br>Half upfront, half on delivery. Small jobs ($10-30) can be full upfront.</div></div>
-    <div class="step"><div class="num">3</div><div><strong>Get your code</strong><br>Delivered same day for most projects. Clean, commented, ready to run.</div></div>
+<div class="container">
+
+  <section>
+    <h2>💼 Services & Pricing</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🐍</div>
+        <h3>Python Scripts</h3>
+        <div class="price">$15 – $35</div>
+        <p>Automation, data processing, file manipulation, API calls</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🕷️</div>
+        <h3>Web Scrapers</h3>
+        <div class="price">$20 – $50</div>
+        <p>Any website including JavaScript-heavy pages, export to CSV/JSON/Excel</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🤖</div>
+        <h3>Discord / Telegram Bots</h3>
+        <div class="price">$25 – $60</div>
+        <p>Commands, moderation, notifications, API integrations</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎮</div>
+        <h3>Game Automation Bots</h3>
+        <div class="price">$40 – $80</div>
+        <p>ADB + OpenCV/template matching for Android games via Scrcpy</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔗</div>
+        <h3>API Integrations</h3>
+        <div class="price">$20 – $50</div>
+        <p>Connect any two services, webhooks, OAuth, REST APIs</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">📊</div>
+        <h3>Data Processing</h3>
+        <div class="price">$20 – $45</div>
+        <p>CSV/Excel manipulation, pandas, cleaning, analysis, reports</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🌐</div>
+        <h3>Landing Pages</h3>
+        <div class="price">$30 – $75</div>
+        <p>Clean HTML/CSS websites, responsive, fast-loading</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🛠️</div>
+        <h3>Browser Automation</h3>
+        <div class="price">$30 – $60</div>
+        <p>Playwright/Puppeteer scripts for testing, form filling, scraping</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠️ What I've Built</h2>
+    <div class="examples">
+      <h3>Recent projects (examples):</h3>
+      <ul>
+        <li>Python + OpenCV bot that automates an Android mobile game via ADB/Scrcpy</li>
+        <li>Web scraper that harvests product data from 50k+ pages into Excel</li>
+        <li>Discord bot with custom commands, role management, and Stripe payment integration</li>
+        <li>Telegram bot that monitors crypto prices and sends alerts</li>
+        <li>Python script to bulk-process 10,000 CSV rows and deduplicate contacts</li>
+        <li>Playwright automation to fill government forms and export confirmations as PDFs</li>
+        <li>REST API integration between Shopify, Zapier, and a custom webhook handler</li>
+        <li>Reddit bot that monitors subreddits and posts responses based on keywords</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚙️ Tech Stack</h2>
+    <div class="tech-stack">
+      <span class="tech-tag">Python 3</span>
+      <span class="tech-tag">JavaScript / Node.js</span>
+      <span class="tech-tag">OpenCV</span>
+      <span class="tech-tag">Playwright</span>
+      <span class="tech-tag">BeautifulSoup</span>
+      <span class="tech-tag">Scrapy</span>
+      <span class="tech-tag">pandas</span>
+      <span class="tech-tag">requests</span>
+      <span class="tech-tag">ADB / Scrcpy</span>
+      <span class="tech-tag">Discord.py / discord.js</span>
+      <span class="tech-tag">Telegram Bot API</span>
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">Flask / FastAPI</span>
+      <span class="tech-tag">SQLite / PostgreSQL</span>
+      <span class="tech-tag">REST APIs</span>
+      <span class="tech-tag">Bash / Shell</span>
+      <span class="tech-tag">Git</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>🚀 How It Works</h2>
+    <div class="how-it-works">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Describe Your Task</h3>
+        <p>Email me what you need. Be as detailed or vague as you want.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Get a Specific Plan</h3>
+        <p>I reply with exactly how I'd build it and a fixed price.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Fast Delivery</h3>
+        <p>Small jobs often done same day. Complex work within 2-3 days.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Pay via PayPal</h3>
+        <p>Pay after you're satisfied. Simple and secure.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-section">
+    <h2>📬 Ready to Start?</h2>
+    <p>Tell me what you need and I'll reply within a few hours.</p>
+    <a href="mailto:ben@balmontcreatives.com" class="email-link">📧 ben@balmontcreatives.com</a>
+    <br>
+    <small style="color: #8b949e; margin-top: 15px; display: block;">PayPal: ben@balmontcreatives.com</small>
   </div>
-</div>
 
-<div class="cta-section">
-  <h2>Ready to get started?</h2>
-  <p>Email your project details and I'll get back to you fast.</p>
-  <a href="mailto:ben@balmontcreatives.com?subject=Freelance Project" class="btn">📩 ben@balmontcreatives.com</a>
 </div>
 
 <footer>
-  <p>Ben Balmont — Freelance Developer | Toronto, Canada | PayPal payments accepted</p>
-  <p style="margin-top:8px; color:#333">Also available: <a href="#" style="color:#555">50 Bartending Instagram Captions Pack — $3</a></p>
+  <p>Ben Balmont Creative Services · Fast, reliable code delivery · PayPal accepted</p>
 </footer>
 
 </body>
